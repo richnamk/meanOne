@@ -1,0 +1,24 @@
+<div
+  class="user-new-div">
+
+    <form 
+      (submit)="onSubmit()"
+      #createForm="ngForm"
+    >
+      <label>Name:</label>
+      <input 
+        type="text" 
+        name="name" 
+        required
+        minlength="2"
+        maxlength="30"
+        [(ngModel)]="user.name"
+        #name="ngModel"
+        />
+        <button
+          class="user-new-submit"
+        >Enter
+        </button>
+    </form>
+
+</div>
