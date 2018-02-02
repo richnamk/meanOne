@@ -1,3 +1,24 @@
-<p>
-  note-list works!
-</p>
+<h3>{{userbuck.name}}'s Bucket List</h3>
+<br>
+<h4>Pending Bucket List Items</h4>
+<table>
+  <tr *ngFor="let bucket of itempending">
+    <td><input type="checkbox" [(ngModel)]="bucket.done" disabled></td>
+    <td><b>{{bucket._creator}}</b>-</td>
+    <td>{{bucket.title}}-</td>
+    <td>{{bucket.desc}}-</td>
+    <td>{{bucket.createdAt | date: 'short'}}</td>
+  </tr>
+</table><br>
+<h3>Completed Bucket List Items</h3>
+<table>
+  <tr *ngFor="let bucket of item">
+    <td><input type="checkbox" [(ngModel)]="bucket.done" disabled></td>
+    <td><b>{{bucket._creator}}</b>-</td>
+    <td>{{bucket.item}}-</td>
+    <td>{{bucket.desc}}-</td>
+    <td>{{bucket.createdAt | date: 'short'}}</td>
+  </tr>
+</table>
+<a [routerLink]="['/dashboard','add']"><input type="button" value="Back"></a>
+

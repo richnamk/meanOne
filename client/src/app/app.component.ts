@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from './user/user.service';
 import { Location } from '@angular/common';
+import { UserService } from './user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
           this._route.navigateByUrl('/');
           return;
         }
-        this._location.back();
+        // this._location.back();
       },
       console.log
     )

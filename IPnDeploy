@@ -1,26 +1,26 @@
-IP Addy:
+IP Addy: 52.14.84.242
 
--- Mean Deployment Instructions --
+// -- Mean Deployment Instructions --
 
- ***Make sure your project is in it's own GitHub repository***
+//  ***Make sure your project is in it's own GitHub repository***
  
-    - First we need to set up our .gitignore to ignore our node_modules directory 
+//     - First we need to set up our .gitignore to ignore our node_modules directory 
 
-    - Navigate to your project's root directory
-    > vim .gitignore
+//     - Navigate to your project's root directory
+//     > vim .gitignore
 
-    ***You're now using VIM!***  
-    - Press i to go into INSERT mode, and then paste the following code:
-        .DS_Store
-        .idea
-        /node_modules
+//     ***You're now using VIM!***  
+//     - Press i to go into INSERT mode, and then paste the following code:
+//         .DS_Store
+//         .idea
+//         /node_modules
 
-    - Press esc to exit Insert Mode.
-    - Then, type :wq  and press enter to write (save) and quit (exit) VIM.
+//     - Press esc to exit Insert Mode.
+//     - Then, type :wq  and press enter to write (save) and quit (exit) VIM.
 
-    > git add .
-    > git commit -m 'added gitignore'
-    > git push origin master
+//     > git add .
+//     > git commit -m 'added gitignore'
+//     > git push origin master
 
     - Create your AWS instance following the instructions on the Learn Platform (or refer to instructor videos) 
 

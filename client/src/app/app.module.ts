@@ -4,14 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
+
 import { UserService } from './user/user.service';
 import { UserComponent } from './user/user.component';
 import { UserNewComponent } from './user/user-new/user-new.component';
+import { UserLogoutComponent } from './user/user-logout/user-logout.component';
+
 import { NoteComponent } from './note/note.component';
 import { NoteListComponent } from './note/note-list/note-list.component';
-import { UserLogoutComponent } from './user/user-logout/user-logout.component';
+import { AddComponent } from './note/note-add/note-add.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { UserLogoutComponent } from './user/user-logout/user-logout.component';
     UserNewComponent,
     NoteComponent,
     NoteListComponent,
-    UserLogoutComponent
+    UserLogoutComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,

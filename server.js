@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var path = require("path");
 var app = express();
 var routes = require('./server/config/routes.js');
-var port = 8000;
+var port = 6789;
 
 require('./server/config/mongoose.js')
 
@@ -24,5 +24,5 @@ app.use(express.static(path.join(__dirname, "/client/dist")));
 routes(app)
 
 app.listen(port, function() {
- console.log("listening on port 8000");
+ console.log("listening on port 6789");
 });

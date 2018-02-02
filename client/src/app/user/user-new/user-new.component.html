@@ -2,7 +2,7 @@
   class="user-new-div">
 
     <form 
-      (submit)="onSubmit()"
+      (submit)="onSubmit(); createUser.resetForm()"
       #createForm="ngForm"
     >
       <label>Name:</label>
