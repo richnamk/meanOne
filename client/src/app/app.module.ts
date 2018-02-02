@@ -14,6 +14,7 @@ import { UserLogoutComponent } from './user/user-logout/user-logout.component';
 import { NoteComponent } from './note/note.component';
 import { NoteListComponent } from './note/note-list/note-list.component';
 import { AddComponent } from './note/note-add/note-add.component';
+import { BucketService } from './note/bucket.service';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { AddComponent } from './note/note-add/note-add.component';
     FormsModule,
     HttpModule
   ],
-  providers: [UserService],
+  providers: [UserService, BucketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

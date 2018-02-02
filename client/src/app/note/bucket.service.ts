@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http/src/http';
+import { Http } from '@angular/http';
 import { Bucket } from '../note/bucket';
 import { User } from '../user/user';
 

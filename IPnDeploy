@@ -66,6 +66,137 @@ IP Addy: 52.14.84.242
 
     - Create the dist folder
     > sudo ng build
+--------------------------------------------------
+ERROR in ./src/app/note/bucket.service.ts
+Module not found: Error: Can't resolve '@angular/http/src/http' in '/var/www/meanOne/client/src/app/note'
+resolve '@angular/http/src/http' in '/var/www/meanOne/client/src/app/note'
+  Parsed request is a module
+  using description file: /var/www/meanOne/client/package.json (relative path: ./src/app/note)
+    Field 'browser' doesn't contain a valid alias configuration
+  after using description file: /var/www/meanOne/client/package.json (relative path: ./src/app/note)
+    resolve as module
+      /var/www/meanOne/client/src/app/note/node_modules doesn't exist or is not a directory
+      /var/www/meanOne/client/src/app/node_modules doesn't exist or is not a directory
+      /var/www/meanOne/client/src/node_modules doesn't exist or is not a directory
+      /var/www/node_modules doesn't exist or is not a directory
+      /var/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+      looking for modules in /var/www/meanOne/client/node_modules
+        using description file: /var/www/meanOne/client/package.json (relative path: ./node_modules)
+          Field 'browser' doesn't contain a valid alias configuration
+        after using description file: /var/www/meanOne/client/package.json (relative path: ./node_modules)
+          using description file: /var/www/meanOne/client/node_modules/@angular/http/package.json (relative path: ./src/http)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/node_modules/@angular/http/src/http doesn't exist
+            .ts
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/node_modules/@angular/http/src/http.ts doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/node_modules/@angular/http/src/http.js doesn't exist
+            as directory
+              /var/www/meanOne/client/node_modules/@angular/http/src/http doesn't exist
+      looking for modules in /var/www/meanOne/node_modules
+        using description file: /var/www/meanOne/package.json (relative path: ./node_modules)
+          Field 'browser' doesn't contain a valid alias configuration
+        after using description file: /var/www/meanOne/package.json (relative path: ./node_modules)
+          using description file: /var/www/meanOne/package.json (relative path: ./node_modules/@angular/http/src/http)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/node_modules/@angular/http/src/http doesn't exist
+            .ts
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/node_modules/@angular/http/src/http.ts doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/node_modules/@angular/http/src/http.js doesn't exist
+            as directory
+              /var/www/meanOne/node_modules/@angular/http/src/http doesn't exist
+      looking for modules in /var/www/meanOne/client/node_modules
+        using description file: /var/www/meanOne/client/package.json (relative path: ./node_modules)
+          Field 'browser' doesn't contain a valid alias configuration
+        after using description file: /var/www/meanOne/client/package.json (relative path: ./node_modules)
+          using description file: /var/www/meanOne/client/node_modules/@angular/http/package.json (relative path: ./src/http)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/node_modules/@angular/http/src/http doesn't exist
+            .ts
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/node_modules/@angular/http/src/http.ts doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/node_modules/@angular/http/src/http.js doesn't exist
+            as directory
+              /var/www/meanOne/client/node_modules/@angular/http/src/http doesn't exist
+      looking for modules in /var/www/meanOne/client/src
+        using description file: /var/www/meanOne/client/package.json (relative path: ./src)
+          Field 'browser' doesn't contain a valid alias configuration
+        after using description file: /var/www/meanOne/client/package.json (relative path: ./src)
+          using description file: /var/www/meanOne/client/package.json (relative path: ./src/@angular/http/src/http)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/src/@angular/http/src/http doesn't exist
+            .ts
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/src/@angular/http/src/http.ts doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/src/@angular/http/src/http.js doesn't exist
+            as directory
+              /var/www/meanOne/client/src/@angular/http/src/http doesn't exist
+      looking for modules in /var/www/meanOne/client/src
+        using description file: /var/www/meanOne/client/package.json (relative path: ./src)
+          Field 'browser' doesn't contain a valid alias configuration
+        after using description file: /var/www/meanOne/client/package.json (relative path: ./src)
+          using description file: /var/www/meanOne/client/package.json (relative path: ./src/@angular/http/src/http)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/src/@angular/http/src/http doesn't exist
+            .ts
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/src/@angular/http/src/http.ts doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /var/www/meanOne/client/src/@angular/http/src/http.js doesn't exist
+            as directory
+              /var/www/meanOne/client/src/@angular/http/src/http doesn't exist
+[/var/www/meanOne/client/src/app/note/node_modules]
+[/var/www/meanOne/client/src/app/node_modules]
+[/var/www/meanOne/client/src/node_modules]
+[/var/www/node_modules]
+[/var/node_modules]
+[/node_modules]
+[/var/www/meanOne/client/node_modules/@angular/http/src/http]
+[/var/www/meanOne/client/node_modules/@angular/http/src/http.ts]
+[/var/www/meanOne/node_modules/@angular/http/src/http]
+[/var/www/meanOne/client/node_modules/@angular/http/src/http.js]
+[/var/www/meanOne/client/node_modules/@angular/http/src/http]
+[/var/www/meanOne/node_modules/@angular/http/src/http.ts]
+[/var/www/meanOne/node_modules/@angular/http/src/http.js]
+[/var/www/meanOne/node_modules/@angular/http/src/http]
+[/var/www/meanOne/client/node_modules/@angular/http/src/http]
+[/var/www/meanOne/client/node_modules/@angular/http/src/http.ts]
+[/var/www/meanOne/client/node_modules/@angular/http/src/http.js]
+[/var/www/meanOne/client/node_modules/@angular/http/src/http]
+[/var/www/meanOne/client/src/@angular/http/src/http]
+[/var/www/meanOne/client/src/@angular/http/src/http.ts]
+[/var/www/meanOne/client/src/@angular/http/src/http.js]
+[/var/www/meanOne/client/src/@angular/http/src/http]
+[/var/www/meanOne/client/src/@angular/http/src/http]
+[/var/www/meanOne/client/src/@angular/http/src/http.ts]
+[/var/www/meanOne/client/src/@angular/http/src/http.js]
+[/var/www/meanOne/client/src/@angular/http/src/http]
+ @ ./src/app/note/bucket.service.ts 11:0-46
+ @ ./src/app/note/note-list/note-list.component.ts
+ @ ./src/app/app.module.ts
+ @ ./src/main.ts
+ @ multi ./src/main.ts
+-------------------------------------------------
+
+
+
+
 
     - Set up Nginx
     > cd /etc/nginx/sites-available
@@ -73,17 +204,17 @@ IP Addy: 52.14.84.242
 
     ***You're now using VIM*** 
     - Press i to go into INSERT mode. Then, paste the following code:
-    server {
-        listen 80;
-        location / {
-            proxy_pass http://{{EC2_PRIVATE_IP}}:{{NODE_SERVER_PORT}};
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection 'upgrade';
-            proxy_set_header Host $host;
-            proxy_cache_bypass $http_upgrade;
-        }
+server {
+    listen 80;
+    location / {
+        proxy_pass http://172.31.45.155:6789;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
     }
+}
 
     - Press esc to exit Insert Mode.
     - Then, type :wq  and press enter to write (save) and quit (exit) VIM.
@@ -92,7 +223,7 @@ IP Addy: 52.14.84.242
     > sudo rm default
 
     - Create the symbolic link
-    > sudo ln -s /etc/nginx/sites-available/{{GITHUB_REPO_NAME}} /etc/nginx/sites-enabled/{{GITHUB_REPO_NAME}}
+    > sudo ln -s /etc/nginx/sites-available/meanOne /etc/nginx/sites-enabled/meanOne
 
     - Delete the other default file
     > cd /etc/nginx/sites-enabled
@@ -118,7 +249,7 @@ IP Addy: 52.14.84.242
     > sudo chown -R ubuntu data/db
 
     - Navigate to your project folder
-    > cd /var/www/{{GITHUB_REPO_NAME}}
+    > cd /var/www/meanOne
 
     - Turn on MongoDB and your server with PM2 (always use sudo with pm2 commands!)
     > sudo pm2 start mongod

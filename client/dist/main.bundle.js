@@ -104,8 +104,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
 var common_1 = __webpack_require__("../../../common/esm5/common.js");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
 var AppComponent = /** @class */ (function () {
     function AppComponent(_route, _location, _userService) {
         this._route = _route;
@@ -120,7 +120,7 @@ var AppComponent = /** @class */ (function () {
                 _this._route.navigateByUrl('/');
                 return;
             }
-            _this._location.back();
+            // this._location.back();
         }, console.log);
     };
     AppComponent = __decorate([
@@ -161,9 +161,11 @@ var app_component_1 = __webpack_require__("../../../../../src/app/app.component.
 var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
 var user_component_1 = __webpack_require__("../../../../../src/app/user/user.component.ts");
 var user_new_component_1 = __webpack_require__("../../../../../src/app/user/user-new/user-new.component.ts");
+var user_logout_component_1 = __webpack_require__("../../../../../src/app/user/user-logout/user-logout.component.ts");
 var note_component_1 = __webpack_require__("../../../../../src/app/note/note.component.ts");
 var note_list_component_1 = __webpack_require__("../../../../../src/app/note/note-list/note-list.component.ts");
-var user_logout_component_1 = __webpack_require__("../../../../../src/app/user/user-logout/user-logout.component.ts");
+var note_add_component_1 = __webpack_require__("../../../../../src/app/note/note-add/note-add.component.ts");
+var bucket_service_1 = __webpack_require__("../../../../../src/app/note/bucket.service.ts");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -175,7 +177,8 @@ var AppModule = /** @class */ (function () {
                 user_new_component_1.UserNewComponent,
                 note_component_1.NoteComponent,
                 note_list_component_1.NoteListComponent,
-                user_logout_component_1.UserLogoutComponent
+                user_logout_component_1.UserLogoutComponent,
+                note_add_component_1.AddComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -183,13 +186,209 @@ var AppModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule
             ],
-            providers: [user_service_1.UserService],
+            providers: [user_service_1.UserService, bucket_service_1.BucketService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
     return AppModule;
 }());
 exports.AppModule = AppModule;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/note/bucket.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../http/esm5/http.js");
+var BucketService = /** @class */ (function () {
+    function BucketService(_http) {
+        this._http = _http;
+    }
+    BucketService.prototype.getauth = function (callback, errorback) {
+        this._http.get('/author').subscribe(function (res) {
+            callback(res.json());
+        }, function (err) {
+            errorback(err);
+        });
+    };
+    BucketService.prototype.getItemId = function (id, callback, errorback) {
+        this._http.get('/author/' + id).subscribe(function (res) {
+            callback(res.json());
+        }, function (err) {
+            errorback(err);
+        });
+    };
+    BucketService.prototype.addItem = function (obj, callback, errorback) {
+        this._http.post("/author", obj).subscribe(function (res) {
+            callback(res.json());
+        }, function (err) {
+            errorback(err);
+        });
+    };
+    BucketService.prototype.updateItem = function (obj, callback, errorback) {
+        this._http.post("/status", obj).subscribe(function (res) {
+            callback(res.json());
+        }, function (err) {
+            errorback(err);
+        });
+    };
+    BucketService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
+    ], BucketService);
+    return BucketService;
+}());
+exports.BucketService = BucketService;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/note/bucket.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Bucket = /** @class */ (function () {
+    function Bucket() {
+    }
+    return Bucket;
+}());
+exports.Bucket = Bucket;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/note/note-add/note-add.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/note/note-add/note-add.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<form #createBucket='ngForm' (submit)='addBucket(); createBucket.resetForm()'>\n  Name: <input type=\"text\" #n=\"ngModel\" [(ngModel)]=\"newBucket.item\" name=\"name\" required>\n  Description: <input type=\"text\" #d=\"ngModel\" [(ngModel)]=\"newBucket.desc\" name=\"desc\" required>\n  Tag User:\n  <select [(ngModel)]=\"owner2\" name=\"owner\">\n    <option value=\"{{loggedUser._id}}\"></option>\n    <option *ngFor=\"let name of names\" [value]=\"name._id\">\n      {{name.name}}\n    </option>\n  </select>\n  <input type=\"submit\" value=\"Add Bucket List Item\" [disabled]=\"!createBucket.valid\">\n</form>\n\n<table>\n  <thead>\n    <tr>\n      <td colspan=\"5\"><b>Before I die I want to...</b></td>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let bucket of userbuck.buckets, let indx = index\">\n      <td><input type=\"checkbox\" [(ngModel)]=\"bucket.done\" (change)=\"updateCompleted(bucket._id, idx)\"></td>\n      <td><b>{{bucket._creator}}</b>-</td>\n      <td>{{bucket.item}}-</td>\n      <td>{{bucket.desc}}-</td>\n      <td>{{bucket.createdAt | date: 'short'}}</td>\n    </tr>\n  </tbody>\n</table>\n\n<h3>List of other logged users</h3>\n<ul>\n  <li *ngFor=\"let name of names\"><a [routerLink]=\"['/dashboard','list',name._id]\">{{name.name}}</a></li>\n</ul>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/note/note-add/note-add.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var bucket_1 = __webpack_require__("../../../../../src/app/note/bucket.ts");
+var bucket_service_1 = __webpack_require__("../../../../../src/app/note/bucket.service.ts");
+var user_1 = __webpack_require__("../../../../../src/app/user/user.ts");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
+var AddComponent = /** @class */ (function () {
+    function AddComponent(_bucketService, _userService, _router) {
+        this._bucketService = _bucketService;
+        this._userService = _userService;
+        this._router = _router;
+    }
+    AddComponent.prototype.ngOnInit = function () {
+        this.loggedUser = this._userService.currentUser;
+        this.names = [];
+        this.newitem = new bucket_1.Bucket();
+        this.newitem._creator = this.loggedUser.name;
+        this.owner2 = this.loggedUser._id;
+        this.userbuck = new user_1.User();
+        this.getBuckets();
+        this.getNames();
+    };
+    AddComponent.prototype.getBuckets = function () {
+        var _this = this;
+        this._bucketService.getItemId(this._userService.currentUser._id, function (user_buckets) {
+            _this.userbuck = user_buckets;
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    AddComponent.prototype.getNames = function () {
+        var _this = this;
+        this._bucketService.getauth(function (names) {
+            for (var i = 0; i < names.length; i++) {
+                if (names[i]._id != _this.loggedUser._id) {
+                    _this.names.push(names[i]);
+                }
+            }
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    AddComponent.prototype.addBucket = function () {
+        var _this = this;
+        var obj = { owner: this.owner2, bucket: this.newitem };
+        this._bucketService.addItem(obj, function (buckets) {
+            _this.newitem = new bucket_1.Bucket();
+            _this.userbuck = buckets;
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    AddComponent.prototype.updateCompleted = function (id, index) {
+        var _this = this;
+        var obj = { id: id, completed: this.userbuck.buckets[index].done };
+        this._bucketService.updateItem(obj, function (buckets) {
+            _this.userbuck = buckets;
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    AddComponent.prototype.viewList = function (id) {
+        this._router.navigate(['view', id]);
+        this.names = [];
+    };
+    AddComponent = __decorate([
+        core_1.Component({
+            selector: 'app-note-add',
+            template: __webpack_require__("../../../../../src/app/note/note-add/note-add.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/note/note-add/note-add.component.css")]
+        }),
+        __metadata("design:paramtypes", [bucket_service_1.BucketService, user_service_1.UserService, router_1.Router])
+    ], AddComponent);
+    return AddComponent;
+}());
+exports.AddComponent = AddComponent;
 
 
 /***/ }),
@@ -215,7 +414,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/note/note-list/note-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  note-list works!\n</p>\n"
+module.exports = "<h3>{{userbuck.name}}'s Bucket List</h3>\n<br>\n<h4>Pending Bucket List Items</h4>\n<table>\n  <tr *ngFor=\"let bucket of itempending\">\n    <td><input type=\"checkbox\" [(ngModel)]=\"bucket.done\" disabled></td>\n    <td><b>{{bucket._creator}}</b>-</td>\n    <td>{{bucket.title}}-</td>\n    <td>{{bucket.desc}}-</td>\n    <td>{{bucket.createdAt | date: 'short'}}</td>\n  </tr>\n</table><br>\n<h3>Completed Bucket List Items</h3>\n<table>\n  <tr *ngFor=\"let bucket of item\">\n    <td><input type=\"checkbox\" [(ngModel)]=\"bucket.done\" disabled></td>\n    <td><b>{{bucket._creator}}</b>-</td>\n    <td>{{bucket.item}}-</td>\n    <td>{{bucket.desc}}-</td>\n    <td>{{bucket.createdAt | date: 'short'}}</td>\n  </tr>\n</table>\n<a [routerLink]=\"['/dashboard','add']\"><input type=\"button\" value=\"Back\"></a>\n\n"
 
 /***/ }),
 
@@ -235,10 +434,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var router_2 = __webpack_require__("../../../router/esm5/router.js");
+var bucket_service_1 = __webpack_require__("../../../../../src/app/note/bucket.service.ts");
+var user_1 = __webpack_require__("../../../../../src/app/user/user.ts");
 var NoteListComponent = /** @class */ (function () {
-    function NoteListComponent() {
+    function NoteListComponent(_router, _active, _buckServ) {
+        this._router = _router;
+        this._active = _active;
+        this._buckServ = _buckServ;
     }
     NoteListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.user_id = '';
+        this.userbuck = new user_1.User();
+        this.itemcompleted = [];
+        this.itempending = [];
+        this._active.paramMap.subscribe(function (params) {
+            _this.user_id = params.get('id');
+        });
+        this._buckServ.getItemId(this.user_id, function (user_buckets) {
+            for (var i = 0; i < user_buckets.buckets.length; i++) {
+                if (user_buckets.buckets[i].completed) {
+                    _this.itemcompleted.push(user_buckets.buckets[i]);
+                }
+                else {
+                    _this.itempending.push(user_buckets.buckets[i]);
+                }
+                _this.userbuck = user_buckets;
+            }
+        }, function (error) {
+            console.log(error);
+        });
     };
     NoteListComponent = __decorate([
         core_1.Component({
@@ -246,7 +473,7 @@ var NoteListComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/note/note-list/note-list.component.html"),
             styles: [__webpack_require__("../../../../../src/app/note/note-list/note-list.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [router_1.Router, router_2.ActivatedRoute, bucket_service_1.BucketService])
     ], NoteListComponent);
     return NoteListComponent;
 }());
@@ -276,7 +503,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/note/note.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-user-logout></app-user-logout>\n<p>\n  note works!\n</p>\n"
+module.exports = "<a [routerLink]=\"['/note-list', 'note-add']\" > Dashboard </a>\n<br>\n<app-user-logout></app-user-logout>\n<br>\n<div>\n  <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -342,7 +569,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user/user-logout/user-logout.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button\n  (click)=\"logout()\">Logout</button>\n\n<p>\n  user-logout works!\n</p>\n"
+module.exports = "<button\n    (click)=\"logout()\"\n>shit\n</button>\n"
 
 /***/ }),
 
@@ -416,7 +643,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user/user-new/user-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div\n  class=\"user-new-div\">\n\n    <form \n      (submit)=\"onSubmit()\"\n      #createForm=\"ngForm\"\n    >\n      <label>Name:</label>\n      <input \n        type=\"text\" \n        name=\"name\" \n        required\n        minlength=\"2\"\n        maxlength=\"30\"\n        [(ngModel)]=\"user.name\"\n        #name=\"ngModel\"\n        />\n        <button\n          class=\"user-new-submit\"\n        >Enter\n        </button>\n    </form>\n\n</div>"
+module.exports = "<div\n  class=\"user-new-div\">\n\n    <form \n      (submit)=\"onSubmit(); createUser.resetForm()\"\n      #createForm=\"ngForm\"\n    >\n      <label>Name:</label>\n      <input \n        type=\"text\" \n        name=\"name\" \n        required\n        minlength=\"2\"\n        maxlength=\"30\"\n        [(ngModel)]=\"user.name\"\n        #name=\"ngModel\"\n        />\n        <button\n          class=\"user-new-submit\"\n        >Enter\n        </button>\n    </form>\n\n</div>"
 
 /***/ }),
 
@@ -498,7 +725,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user/user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n<p>\n  user works!\n</p>\n"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -608,6 +835,8 @@ exports.UserService = UserService;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var User = /** @class */ (function () {
+    // createdAt: Date;
+    // updatedAt: Date;
     function User() {
         this.name = "";
     }
